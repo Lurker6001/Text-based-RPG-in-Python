@@ -9,4 +9,5 @@ BTW, i'm mostly inactive due to a busy life but I'll try to do stuff whenever po
 
 - v0.1 - March 18, 2022
      The first version ever. Its pretty wonky in most areas but at least it exist now
+     
      TODO: Fix up the interface, refactor some of the code, and of course make it fun
