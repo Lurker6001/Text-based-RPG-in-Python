@@ -40,6 +40,11 @@ while True:
         rng = random.randint(2, 4)
         playerHealth += rng
         print(f"\nYou drank your health potion healing back {rng} health")
+    elif userInput == "q":
+        print("Quitting the program. Have a nice day!")
+        time.sleep(1)
+        clear()
+        break 
     else:
         print("\nInvalid command!")
         time.sleep(1)
