@@ -9,6 +9,7 @@ def clear():
 
 clear()
 
+# Welcome Message
 print("Hello World!")
 print("This is a text-rpg prototype \n")
 print("Press ENTER to continue")
@@ -17,45 +18,54 @@ print(">> ", end = "")
 input()
 
 playerHealth = 10
-enemyHealth = 25
+enemyHealth = 30
 userInput = ""
 
 while True:
     clear()
+    # Move List
     print("Move List")
     print("  -  Attack (z): Deals Damage")
     print("  -  Heal (x): Heals Back Heath")
     print("\n")
+
+    # Current Game State
     print(f"Your HP:    {playerHealth}")
     print(f"Enemy HP:   {enemyHealth}")
     print(">> ", end = "")
 
     userInput = input()
 
-    if userInput == "z":
+    if userInput == "z":    # Attack Command
         rng = random.randint(2, 5)
         enemyHealth -= rng
         print(f"\nYou attacked the enemy dealing {rng} damage")
-    elif userInput == "x":
+
+    elif userInput == "x":  # Heal Command
         rng = random.randint(2, 4)
         playerHealth += rng
+
         print(f"\nYou drank your health potion healing back {rng} health")
-    elif userInput == "q":
+
+    elif userInput == "q":  # Quit Command
         print("Quitting the program. Have a nice day!")
         time.sleep(1)
         clear()
         break 
-    else:
+
+    else:  
         print("\nInvalid command!")
         time.sleep(1)
         continue
 
+    # Enemy "AI"
     time.sleep(1)
     rng = random.randint(1, 3)
     print(f"The enemy attacks you dealing {rng}")
     playerHealth -= rng
     time.sleep(1)
 
+    # Check Win and Lost Conditions 
     if playerHealth <= 0:
         clear()
         print("DEFEAT!")
